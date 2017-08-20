@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <form onsubmit="codigoController.validaCodigo(event)">
+            <input type="text" id="codigo">
+            <button type="submit" >Validar</button> 
+        </form>
+        <p id="paragrafo">Outro teste</p>
+    </body>
+    <script src="js/app/models/Codigo.js"></script>
+    <script src="js/app/controllers/CodigoController.js"></script>
+    <script>
+        let codigoController = new CodigoController();
+    </script>
+</html>
