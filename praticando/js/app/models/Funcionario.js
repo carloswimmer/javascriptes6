@@ -1,6 +1,6 @@
 class Funcionario {
 
-    constructor(nome, endereco, salario) {
+    constructor(nome, endereco = '', salario = '') {
 
         this._nome = nome;
         this._endereco = endereco;
