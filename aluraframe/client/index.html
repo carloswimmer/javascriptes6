@@ -13,7 +13,7 @@
 
     <div id="mensagem"></div>
     
-    <form class="form" onsubmit="">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
         <div class="form-group">
             <label for="data">Data</label>
@@ -64,15 +64,9 @@
         </tfoot>
     </table>
 
-    <div id="negociacoesView"></div>
     <script src="js/app/models/Negociacao.js"></script>
-    <script>
-        var n1 = new Negociacao(new Date, 15, 900);
-
-        console.log(n1.data);
-        var amanha = new Date();
-        n1.data = amanha.setDate(11);
-        console.log(n1.data);
-    </script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/helpers/dateHelper.js"></script>
+    <script>let negociacaoController = new NegociacaoController()</script>
 </body>
 </html>
