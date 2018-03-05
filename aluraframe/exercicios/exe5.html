@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+class Funcionario {
+
+    constructor(email) {
+        this._email = email;
+    }
+
+    get email() {
+        return this._email;
+    }
+
+    set email(email) {
+        this._email = email;
+    }
+}
+
+let funcionario = new Proxy(new Funcionario('cw7@uol.com.br'), {
+    get(target, prop, receiver) {
+        console.log("Armadilha aqui");
+        console.log(prop);
+        return Reflect.get(target, prop, receiver);
+    }
+})
+
+console.log(funcionario.email);
+
+
+</script>
+</html>
